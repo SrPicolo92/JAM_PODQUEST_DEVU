@@ -16,6 +16,6 @@ public class Follower : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        cameraBody.MovePosition(player.rb.position + player.movement * player.moveSpeed * Time.fixedDeltaTime);
+        cameraBody.MovePosition(cameraBody.position + player.movement * player.moveSpeed * Time.fixedDeltaTime);
     }
 }
