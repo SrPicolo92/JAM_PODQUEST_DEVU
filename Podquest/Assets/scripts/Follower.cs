@@ -4,18 +4,17 @@ using UnityEngine;
 
 public class Follower : MonoBehaviour
 {
-    public Movement player;
+    public GameObject player;
 
-    public Rigidbody2D cameraBody;
+    private Vector3 offset;
 
     void Start()
     {
-        cameraBody = GetComponent<Rigidbody2D>();
+        offset = transform.position - player.transform.position;
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
-        cameraBody.MovePosition(cameraBody.position + player.movement * player.moveSpeed * Time.fixedDeltaTime);
+        transform.position = player.transform.position + offset;
     }
 }

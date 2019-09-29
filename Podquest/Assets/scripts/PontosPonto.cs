@@ -6,6 +6,7 @@ public class PontosPonto : MonoBehaviour
 {
     SpriteRenderer rend;
     BoxCollider2D co;
+    public TotalPoints totalPoints;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class PontosPonto : MonoBehaviour
         {
             rend.enabled = false;
             co.enabled = false;
+            totalPoints.points += 1;
         }
     }
 }
